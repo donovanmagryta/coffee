@@ -12,7 +12,7 @@ if (decodedURL) {
             console.log(data);
         })
         .catch(error => {
-            document.body.innerHTML.textContent = `Error: ${error.message}`;
+            document.body.innerHTML = `Error: ${error.message}`;
         });
 } else {
     document.body.innerHTML = 'No URL provided in query parameters.';
