@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const lookup = urlParams.get('lookup');
+let decodedURL = decodeURIComponent(lookup);
+if (decodedURL) {
+    fetch(decodedURL)
+        .then(response => response.text())
+        .then(data => {
+            document.body.innerHTML.textContent = data;
+        })
+        .catch(error => {
+            document.body.innerHTML.textContent = `Error: ${error.message}`;
+        });
+} else {
+    document.body.innerHTML.textContent = 'No URL provided in query parameters.';
+}
+</script>
+</body>
+</html>
