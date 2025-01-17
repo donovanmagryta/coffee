@@ -9,6 +9,7 @@ if (decodedURL) {
         .then(response => response.text())
         .then(data => {
             document.body.innerHTML.textContent = data;
+            console.log(data);
         })
         .catch(error => {
             document.body.innerHTML.textContent = `Error: ${error.message}`;
