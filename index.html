@@ -8,7 +8,7 @@ if (decodedURL) {
     fetch(decodedURL)
         .then(response => response.text())
         .then(data => {
-            document.body.innerHTML = data;
+            document.body.innerHTML = "start" + data + "end";
             console.log(data);
         })
         .catch(error => {
